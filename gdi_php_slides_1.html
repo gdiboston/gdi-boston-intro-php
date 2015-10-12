@@ -13,22 +13,49 @@
         font-family: 'Yanone Kaffeesatz';
         font-weight: normal;
       }
+
+      h1 {
+        font-size: 70px !important;
+      }
+
+      h3 {
+        font-size: 45px !important;
+      }
+
+      h4 {
+        font-size: 70px;
+      }
       li {
-        font-size: 25px;
+        font-size: 30px;
       }
-/*      table {
-        border: 1px;
-        color: solid black;
+
+      .large_left_align {
+        text-align: left;
+        font-size: 70px;
+        font-family: 'Yanone Kaffeesatz';
       }
-      tr {
-        border: 1px !important;
-        color: solid black !important;
-      }*/
+
+      .remark-slide-scaler {
+        width: 1000px;
+      }
       .remark-slide-content {
         font-size: 40px;
         font-family: 'Yanone Kaffeesatz';
+        width: 100%
       }
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .remark-slide-content {
+        padding: 0% 10% 0% 10% !important;
+      }
+
+      b {
+        color: red;
+      }
+
+      .remark-code, .remark-inline-code { 
+        font-family: 'Ubuntu Mono'; 
+        font-size: 35px;
+      }
     </style>
   </head>
   <body>
@@ -36,7 +63,7 @@
 
 class: center, middle
 
-#  Introduction to PHP
+#  Intro To Programming: PHP
 ### Focus on the Fundamentals
 
 ---
@@ -58,16 +85,18 @@ class: center, middle
 
 ---
 
-class: center, middle
-# 1st class: learn + code
-# 2nd class: learn + code
-# 3rd class: learn + code
-# 4th class: review and exercises
+class: large_left_align
+#Class Agenda:
+## 1st class: learn + code
+## 2nd class: learn + code
+## 3rd class: learn + code
+## 4th class: learn + review + exercises
 
 ---
 
 class: center, middle
-# Supportive Environment: Ask questions
+# Supportive Environment
+Don't be afraid to ask questions!
 
 ---
 
@@ -94,18 +123,18 @@ class: center, middle
 ---
 
 class: center, middle
-## string 
-## integer
-## boolean
-## array
-## null
+### string 
+### integer
+### boolean
+### array
+### null
 
 ---
 
-# Practice (15 mins)
-##Strings
+# Practice (10 mins)
+## Strings:
 - print out 3 strings
-- after, convert the last string to all upper case and run your program again
+- after, find a way to programatically convert the last string to all upper case (in other words, don't just re-write the string yourself in all caps) and run your program again. This will require some googling. 
 
 ## Integers: 
 - print out 342 multiplied by 5
@@ -118,14 +147,14 @@ class: center, middle
 
 ---
 
-# Practice (10 mins)
-##Part I
+# Practice (15 mins)
 - create two variables: your first name and your last name
-- writing only one line of code, print out your full name
-
-##Part II
+- writing only one line of code using these variables, print out your full name
 - create two more integer variables: your birth year and today's year
 - writing only one line of code, use these two variables to find out your current age and print it out
+
+Challenge (if you completed early): 
+- Print a small sentence using your variables. "Hi, my name is [first name]. It begins with the letter [first letter of your name]." But don't just write your first letter out. Find a PHP operation that allows you to use the variable to print the letter. Hint: this will require some Googling. Don't be afraid to use the TAs either!
 
 ---
 
@@ -143,50 +172,50 @@ class: center, middle
 ---
 
 class: center, middle
-## 9 > 5 * 2;
+#### 9 > 5 * 2;
 
 ---
 
 
 class: center, middle
-## 9 <= 9;
+#### 9 <= 9;
 
 ---
 
 
 class: center, middle
-## 9 !== 9;
+#### 9 !== 9;
 
 ---
 
 
 class: center, middle
-## $variable = (9 !== 9);
+#### $variable = (9 !== 9);
 
 
 ---
 
 class: center, middle
-# Logical Operators
-## &&
-## ||
+# Logical Operators: 
+#### &&
+#### ||
 
 
 ---
 
 class: center, middle
-## 9 > 4 && 3 > 1;
+#### 9 > 4 && 3 > 1;
 
 ---
 
-class: center, middle
-## 10 > 3 && 8 > 1000;
+class: center, middle, boolean
+#### 10 > 3 && 8 > 1000;
 
 ---
 
 
 class: center, middle
-## $variable = (10 > 3 || 8 < 1000);
+#### $variable = (10 > 3 || 8 < 1000);
 
 ---
 
@@ -198,9 +227,13 @@ class: center, middle
 
 ```php
 if ( 10 > 5) {
+
   echo "Printing first statement";
+
 } else {
+
   echo "Printing second statement";
+
 }
 ```
 
@@ -241,14 +274,13 @@ if (5 > 9) {
 ---
 
 # PRACTICE  (20 minutes)
-
-- Write a variable containing your name.
-- Write a variable containing your year of birth.
-- Write a variable containing today's year.
-- Write a variable containing the name of a movie.
-- Write an if/else statement checking your age: If your age is 18 or over, then print out "Congrats __(your name)___, you can watch this __(name of movie)__." Otherwise, print out "Sorry, ___(your name)___, you are not old enough to enter". If your age is less than 12, print out: "Where are your parents!??"
+- Write variables that contain: your name, your year of birth, today's year, the name of an R-rated movie.
+- Write an if/else statement checking your age: if your age is 18 or over, then print out "Congrats [your name], you can watch this [name of movie]." Otherwise, print out "Sorry, [your name], you are not old enough to enter." If your age is less than 12, print out: "Where are your parents!??"
 - Run your program!
-- Then run your program changing your year of birth to 2010. It should print out "Where are your parents!??"
+- Now, change your year of birth to 2010. Run your program again. It should print out "Where are your parents!??"
+<br>
+<br>
+<b>Challenge</b>: Edit your year variable so that it programmatically sets the correct year for you. This will require some Googling. 
 
 ---
 
