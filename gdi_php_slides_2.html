@@ -85,7 +85,7 @@ class: center, middle
 
 # If / Else
 ```php
-$name = "Emily";
+$name = "Miranda";
 
 if ($name === 'Emily') {
   echo 'Phone number is 222-222-4432';
@@ -169,6 +169,7 @@ $my_array = [];
 
 ---
 
+## An array with elements in it
 
 ```php
 $my_pets_array = array(
@@ -178,21 +179,27 @@ $my_pets_array = array(
   "Ziggy"
 );
 ```
----
-
-$my_pets_array[];
-
 
 ---
+
+## This is how you ouput the entire contents of the array to the screen
+var_dump($my_pets_array);
+
+---
+
+## This is how you access stuff from an array
+
 ```php
-$my_pets_array = array(
-  "Fluffy", 
-  "Hairball", 
-  "Moomba", 
-  "Ziggy"
-);
+$my_pets_array[insert index number here];
 
-echo $my_pets_array[1] . PHP_EOL;
+```
+---
+
+## This is how you add to the array
+
+```php
+$my_pets_array[] = your_new_item_here;
+
 ```
 ---
 
@@ -240,6 +247,18 @@ foreach($friends_array as $friend) {
 }
 ```
 ---
+
+## Practice (15mins)
+Create a simple array (without defining your own keys): $my_favorite_colors.
+Insert 5 of your top favorite colors. Write a loop that prints out all of your colors.
+
+## Challenge: 
+- Create an array containing numbers 1-50. If the number is divisible by 5, print out fizz. If the number if divisible by 3, print out buzz. If the number is divisible by 3 and 5, print out fizzbuzz.
+
+- <r>HINTS</r>: 1) You probably don't want to type out all numbers 1-50 right? Google your way to a shortcut for creating an array with a range of numbers. 2) Think about the order of execution for your if / else statement.
+
+---
+
 ```php
 
 $friends_age_array = array(
@@ -254,16 +273,6 @@ foreach($friends_age_array as $name => $age) {
 }
 ```
 ---
-
-# Practice (15 minutes)
-
-- Create an array of 10 items with an assortment of integers and strings.
-- Save your array to a variable.
-- Loop through the array. If the item is number, multiply it by 10 and print it to the screen. Otherwise, convert it to all uppercase and print it to the screen.
-
-<r>HINT</r>: Google how to check for whether something is an integer or not.
-
-
 ---
 
 # Practice (20 minutes)
