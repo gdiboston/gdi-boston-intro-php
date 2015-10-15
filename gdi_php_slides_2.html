@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GDI PHP</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      h3 {
+        font-size: 14px;
+      }
+      h4 {
+        font-size: 15px;
+      }
+      li {
+        font-size: 30px;
+      }
+      table {
+        border: 1px;
+        color: solid black;
+      }
+      tr {
+        border: 1px !important;
+        color: solid black !important;
+      }
+      r {
+        color: red;
+      }
+      .remark-slide-content {
+        font-size: 30px;
+        font-family: 'Yanone Kaffeesatz';
+      }
+      .remark-code, .remark-inline-code { 
+        font-family: 'Ubuntu Mono';
+        font-size: 23px; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+
+## Warm up (10 mins while people arrive)
+
+- Save your name to a variable. 
+- Write some code to detect if your name is greater than 10 characters long. 
+- If so, print out: "Hi, [your name]. Nice to meet you. What a long name! Do you have a nickname I could use?" 
+- Otherwise, print out: "Hi, [your name]. Nice to meet you." 
+
+<r>HINT</r>: What sort of control structure did we learn about last class that evaluates a condition down to true or false to determine whether or execute a block of code or not?
+<r>HINT</r>: Use Google to see what operation you can perform on a string to count all the letters.
+
+---
+
+class: center, middle
+
+#  Introduction to PHP
+### Focus on the Fundamentals
+### Session 2
+
+---
+
+# Review
+### Execution
+### Strings
+### Integers
+### Booleans
+### Comparison operators
+### Logical operators
+### If / else
+
+---
+#Agenda Today:
+##Switch statements
+##Arrays
+##Loops
+
+---
+
+# If / Else
+```php
+$name = "Emily";
+
+if ($name === 'Emily') {
+  echo 'Phone number is 222-222-4432';
+} elseif ($name === 'Stacey') {
+  echo 'Phone number is 111-222-3333';
+} elseif ($name === 'Miranda') {
+  echo 'Phone number is 333-555-6666';
+} elseif ($name === 'Jasmine') {
+  echo 'Phone number is 222-333-5555';
+} else {
+  echo 'Phone number is not available';
+}
+```
+
+---
+
+# Switch Statements
+
+```php
+$name = "Miranda";
+
+switch($name) {
+  case 'Emily':
+    echo "Phone number is 222-222-4432";
+    break;
+  case 'Stacey':
+    echo 'Phone number is 111-222-3333';
+    break;
+  case 'Miranda': 
+   echo 'Phone number is 333-555-6666';
+    break;
+  case 'Jasmine': 
+    echo 'Phone number is 222-333-5555';
+    break;
+  default:
+    echo 'Phone number is not available';
+}
+
+```
+
+---
+### Practice (10 mins): Copy this switch statement. Then run it. Then, try to restructure the code so that it is less repetitive. It should still run the same as before. 
+
+```php
+$name = "Miranda";
+
+switch($name) {
+  case 'Emily':
+    echo "Phone number is 222-222-4432";
+    break;
+  case 'Stacey':
+    echo 'Phone number is 111-222-3333';
+    break;
+  case 'Miranda': 
+   echo 'Phone number is 333-555-6666';
+    break;
+  case 'Jasmine': 
+    echo 'Phone number is 222-333-5555';
+    break;
+  default:
+    echo 'Phone number is not available';
+}
+```
+
+---
+
+class: center, middle
+#Arrays
+A data type that is used to store a bunch of other data types.
+
+---
+
+## Creating arrays
+
+```php
+$my_array = array();
+
+// Or, if you have a newer version of PHP
+$my_array = [];
+```
+
+---
+
+
+```php
+$my_pets_array = array(
+  "Fluffy", 
+  "Hairball", 
+  "Moomba", 
+  "Ziggy"
+);
+```
+---
+
+$my_pets_array[];
+
+
+---
+```php
+$my_pets_array = array(
+  "Fluffy", 
+  "Hairball", 
+  "Moomba", 
+  "Ziggy"
+);
+
+echo $my_pets_array[1] . PHP_EOL;
+```
+---
+
+#Practice (5 - 10 minutes)
+- Create an array and store it as "my phone book"
+- Put in the names of 5 of your friends in your phone book.
+- Now, retrieve your 4th friend from the phone book and print it out to the screen.
+- Now, add another friend into your phone book.
+- Now, only print out the name of your newly added friend.
+- Dump to the screen your entire array output
+
+---
+
+## Practice (25 minutes)
+- Manipulate your phone book array so that your friends names are now the keys. Each key will be paired to a value array of their information: phone number, address, and age. Age and phone number should be integers.
+-  Example of one key-value pair:
+```php
+  'Emily Xie' => array(
+                'phone_number' => '222-222-3333',
+                'address' => '111 Happy Street',
+                'age' => 25
+             ),
+  ```
+- Access your 2nd friend's phone number and print it to the screen.
+- Access your 4th friend's age and print it to the screen.
+- Add your 1st and 5th friend's age together and print the result to the screen.
+- <r>Push</r> a 6th friend to your list, with phone number, address, and age.
+<r>- TIP</r>: Proper spacing and formatting REALLY helps here for readability, especially if you are trying to catch a syntax error.
+
+---
+
+# Loops
+## A way to iterate over an array. 
+(in other words, to "walk through" each element of an array)
+
+---
+```php
+$friends_array = array("Emily", "Gary", "Samantha");
+
+
+// if you have an array with number => value mappings
+foreach($friends_array as $friend) {
+  echo strtoupper($friend);
+  // you can put any valid block of code here
+}
+```
+---
+```php
+
+$friends_age_array = array(
+  "Emily" => 25, 
+  "Gary" => 32, 
+  "Samantha" => 22
+);
+
+// if you have an array with key => value mappings
+foreach($friends_age_array as $name => $age) {
+  echo "$friend is $age years old.";
+}
+```
+---
+
+# Practice (15 minutes)
+
+- Create an array of 10 items with an assortment of integers and strings.
+- Save your array to a variable.
+- Loop through the array. If the item is number, multiply it by 10 and print it to the screen. Otherwise, convert it to all uppercase and print it to the screen.
+
+<r>HINT</r>: Google how to check for whether something is an integer or not.
+
+
+---
+
+# Practice (20 minutes)
+Put it all together: FizzBuzz!
+
+Create an array containing numbers 1-50. Loop through this array. If the number is divisible by 5, print out fizz. If the number if divisible by 3, print out buzz. If the number is divisible by 3 and 5, print out fizzbuzz.
+
+<r>HINT</r>: You probably don't want to type out all numbers 1-50 right? Google your way to a shortcut for creating an array with a range of numbers.
+<r>HINT</r>: There's a curveball in here. Think about the order of execution for your if / else statement.
+
+---
+
+#Agenda Today:
+##Switch statements
+##Arrays
+##Loops
+
+---
+
+    </textarea>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
