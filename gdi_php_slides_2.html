@@ -37,7 +37,7 @@
         font-size: 30px;
         font-family: 'Yanone Kaffeesatz';
       }
-      .remark-code, .remark-inline-code { 
+      .remark-code, .remark-inline-code {
         font-family: 'Ubuntu Mono';
         font-size: 23px; }
     </style>
@@ -45,15 +45,15 @@
   <body>
     <textarea id="source">
 
+### Attendance: http://goo.gl/forms/LorHTSiggo
+### Warm up (10 mins while people arrive.)
 
-## Warm up (10 mins while people arrive)
+- Save your name to a variable.
+- Write some code to detect if your name is greater than 10 characters long.
+- If so, print out: "Hi, [your name]. Nice to meet you. What a long name! Do you have a nickname I could use?"
+- Otherwise, print out: "Hi, [your name]. Nice to meet you."
 
-- Save your name to a variable. 
-- Write some code to detect if your name is greater than 10 characters long. 
-- If so, print out: "Hi, [your name]. Nice to meet you. What a long name! Do you have a nickname I could use?" 
-- Otherwise, print out: "Hi, [your name]. Nice to meet you." 
-
-<r>HINT</r>: What sort of control structure did we learn about last class that evaluates a condition down to true or false to determine whether or execute a block of code or not?
+<r>HINT</r>: What sort of control structure did we learn about last class that evaluates a condition down to true or false to determine whether to execute a block of code or not?
 <r>HINT</r>: Use Google to see what operation you can perform on a string to count all the letters.
 
 ---
@@ -63,7 +63,7 @@ class: center, middle
 #  Introduction to PHP
 ### Focus on the Fundamentals
 ### Session 2
-
+### Attendance: http://goo.gl/forms/LorHTSiggo
 ---
 
 # Review
@@ -77,78 +77,8 @@ class: center, middle
 
 ---
 #Agenda Today:
-##Switch statements
 ##Arrays
 ##Loops
-
----
-
-# If / Else
-```php
-$name = "Miranda";
-
-if ($name === 'Emily') {
-  echo 'Phone number is 222-222-4432';
-} elseif ($name === 'Stacey') {
-  echo 'Phone number is 111-222-3333';
-} elseif ($name === 'Miranda') {
-  echo 'Phone number is 333-555-6666';
-} elseif ($name === 'Jasmine') {
-  echo 'Phone number is 222-333-5555';
-} else {
-  echo 'Phone number is not available';
-}
-```
-
----
-
-# Switch Statements
-
-```php
-$name = "Miranda";
-
-switch($name) {
-  case 'Emily':
-    echo "Phone number is 222-222-4432";
-    break;
-  case 'Stacey':
-    echo 'Phone number is 111-222-3333';
-    break;
-  case 'Miranda': 
-   echo 'Phone number is 333-555-6666';
-    break;
-  case 'Jasmine': 
-    echo 'Phone number is 222-333-5555';
-    break;
-  default:
-    echo 'Phone number is not available';
-}
-
-```
-
----
-### Practice (10 mins): Copy this switch statement. Then run it. Then, try to restructure the code so that it is less repetitive. It should still run the same as before. 
-
-```php
-$name = "Miranda";
-
-switch($name) {
-  case 'Emily':
-    echo "Phone number is 222-222-4432";
-    break;
-  case 'Stacey':
-    echo 'Phone number is 111-222-3333';
-    break;
-  case 'Miranda': 
-   echo 'Phone number is 333-555-6666';
-    break;
-  case 'Jasmine': 
-    echo 'Phone number is 222-333-5555';
-    break;
-  default:
-    echo 'Phone number is not available';
-}
-```
 
 ---
 
@@ -172,25 +102,31 @@ $my_array = [];
 ## An array with elements in it
 
 ```php
-$my_pets_array = array(
-  "Fluffy", 
-  "Hairball", 
-  "Moomba", 
-  "Ziggy"
+$my_information = array(
+  "Emily",
+  "software engineer",
+  25
 );
 ```
 
 ---
 
-## This is how you ouput the entire contents of the array to the screen
-var_dump($my_pets_array);
+## This is how you output the entire contents of the array to the screen
+var_dump($my_information);
 
 ---
 
 ## This is how you access stuff from an array
 
 ```php
-$my_pets_array[insert index number here];
+// this is the syntax
+$my_information[insert index number here];
+
+// for the first item
+$my_information[0]
+
+// for the fourth item
+$my_information[3]
 
 ```
 ---
@@ -198,13 +134,17 @@ $my_pets_array[insert index number here];
 ## This is how you add to the array
 
 ```php
-$my_pets_array[] = your_new_item_here;
+// This is the syntax:
+// $my_information[] = put your new item here;
+
+// example of a string
+$my_information[] = 'female';
 
 ```
 ---
 
 #Practice (5 - 10 minutes)
-- Create an array and store it as "my phone book"
+- Create an array and store it as $my_phone_book
 - Put in the names of 5 of your friends in your phone book.
 - Now, retrieve your 4th friend from the phone book and print it out to the screen.
 - Now, add another friend into your phone book.
@@ -213,7 +153,29 @@ $my_pets_array[] = your_new_item_here;
 
 ---
 
-## Practice (25 minutes)
+# Challenge (For previous exercise)
+- Create a new variable $search and set it equal to a name of your choice
+- If the first name in your phone book is equal to $search, print out 'Match found!'
+- Now, check every name in your phone book, and only print out 'Match found!' once at the very end if a match was found.
+
+
+---
+
+
+## This is an associative array with key value pairs
+
+```php
+$my_pets_array = array(
+  "dog" => "Fluffy",
+  "cat" => "Hairball",
+  "parrot" => "Moomba",
+  "hamster" => "Ziggy"
+);
+
+```
+---
+
+####Practice (25 minutes)
 - Manipulate your phone book array so that your friends names are now the keys. Each key will be paired to a value array of their information: phone number, address, and age. Age and phone number should be integers.
 -  Example of one key-value pair:
 ```php
@@ -227,23 +189,26 @@ $my_pets_array[] = your_new_item_here;
 - Access your 4th friend's age and print it to the screen.
 - Add your 1st and 5th friend's age together and print the result to the screen.
 - <r>Push</r> a 6th friend to your list, with phone number, address, and age.
-<r>- TIP</r>: Proper spacing and formatting REALLY helps here for readability, especially if you are trying to catch a syntax error.
 
 ---
+# Challenge (For previous exercise)
+- Add to each contact array the key 'is_favorite', which can be equal to boolean true or false
+- For each contact, set the value of 'is_favorite' to true or false
+- If the first name in your phone book is in your favorites (the value of 'is_favorite' is true), print out their name
+- Now, check every name in your phone book, and print out only the names of your favorites
 
+
+---
 # Loops
-## A way to iterate over an array. 
+## A way to iterate over an array.
 (in other words, to "walk through" each element of an array)
 
 ---
 ```php
-$friends_array = array("Emily", "Gary", "Samantha");
+$my_pets = array("Spot", "Moomba", "Fluffy");
 
-
-// if you have an array with number => value mappings
-foreach($friends_array as $friend) {
-  echo strtoupper($friend);
-  // you can put any valid block of code here
+foreach($my_pets as $pet) {
+  echo strtoupper($pet) . PHP_EOL;
 }
 ```
 ---
@@ -252,7 +217,7 @@ foreach($friends_array as $friend) {
 Create a simple array (without defining your own keys): $my_favorite_colors.
 Insert 5 of your top favorite colors. Write a loop that prints out all of your colors.
 
-## Challenge: 
+## Challenge:
 - Create an array containing numbers 1-50. If the number is divisible by 5, print out fizz. If the number if divisible by 3, print out buzz. If the number is divisible by 3 and 5, print out fizzbuzz.
 
 - <r>HINTS</r>: 1) You probably don't want to type out all numbers 1-50 right? Google your way to a shortcut for creating an array with a range of numbers. 2) Think about the order of execution for your if / else statement.
@@ -261,28 +226,26 @@ Insert 5 of your top favorite colors. Write a loop that prints out all of your c
 
 ```php
 
-$friends_age_array = array(
-  "Emily" => 25, 
-  "Gary" => 32, 
-  "Samantha" => 22
+$my_pets = array(
+  "dog" => "Spot",
+  "cat" => "Moomba",
+  "hamster" => "Fluffy"
 );
 
 // if you have an array with key => value mappings
-foreach($friends_age_array as $name => $age) {
-  echo "$friend is $age years old.";
+foreach($my_pets as $pet_type => $name) {
+  echo "My $pet_type is named $name." . PHP_EOL;
 }
 ```
 ---
----
 
-# Practice (20 minutes)
-Put it all together: FizzBuzz!
-
-Create an array containing numbers 1-50. Loop through this array. If the number is divisible by 5, print out fizz. If the number if divisible by 3, print out buzz. If the number is divisible by 3 and 5, print out fizzbuzz.
-
-<r>HINT</r>: You probably don't want to type out all numbers 1-50 right? Google your way to a shortcut for creating an array with a range of numbers.
-<r>HINT</r>: There's a curveball in here. Think about the order of execution for your if / else statement.
-
+### Practice (30 mins)
+- Create a phone book (or copy and paste from previous exercise.).
+- Your keys will be the friend's name. Each of these names should be paired with a value array of their information: phone number, address, and age. Age should be an integer. Example key-value pair:
+- Loop through the phone book and print out "(Name)'s phone number is: (phone number)" for each element.
+- <r>CHALLENGE I</r>: Loop through the array and add up all of the ages of each contact. When you are done looping, print out total age
+- <r>CHALLENGE II</r>: Loop through the array and print out phone number, address, and age of all contacts without hard-coding in the keys.
+- <r>CHALLENGE III</r>: Add a 'is_favorite' value for each contact. Set the value to true or false. Now, loop through and print out the names of your favorites only.
 ---
 
 #Agenda Today:
@@ -300,3 +263,75 @@ Create an array containing numbers 1-50. Loop through this array. If the number 
     </script>
   </body>
 </html>
+
+
+---
+
+# If / Else
+```php
+$name = "Miranda";
+
+if ($name === 'Emily') {
+  echo 'Phone number is 222-222-4432';
+} elseif ($name === 'Stacey') {
+  echo 'Phone number is 111-222-3333';
+} elseif ($name === 'Miranda') {
+  echo 'Phone number is 333-555-6666';
+} elseif ($name === 'Jasmine') {
+  echo 'Phone number is 222-333-5555';
+} else {
+  echo 'Phone number is not available';
+}
+```
+
+
+
+---
+
+# Switch Statements
+
+```php
+$name = "Miranda";
+
+switch($name) {
+  case 'Emily':
+    echo "Phone number is 222-222-4432";
+    break;
+  case 'Stacey':
+    echo 'Phone number is 111-222-3333';
+    break;
+  case 'Miranda':
+   echo 'Phone number is 333-555-6666';
+    break;
+  case 'Jasmine':
+    echo 'Phone number is 222-333-5555';
+    break;
+  default:
+    echo 'Phone number is not available';
+}
+
+```
+
+---
+### Practice (10 mins): Copy this switch statement. Then run it. Then, try to restructure the code so that it is less repetitive. It should still run the same as before.
+
+```php
+$name = "Miranda";
+
+switch($name) {
+  case 'Emily':
+    echo "Phone number is 222-222-4432";
+    break;
+  case 'Stacey':
+    echo 'Phone number is 111-222-3333';
+    break;
+  case 'Miranda':
+   echo 'Phone number is 333-555-6666';
+    break;
+  case 'Jasmine':
+    echo 'Phone number is 222-333-5555';
+    break;
+  default:
+    echo 'Phone number is not available';
+}
+```
