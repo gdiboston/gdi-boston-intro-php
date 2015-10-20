@@ -75,8 +75,8 @@ Insert 5 of your top favorite colors. Write a loop that prints out all of your c
 
 ### Warmup Challenge #2:
 - Create an array of numbers 1-100. Loop through the array and add up all the even numbers.
-- <b>Hint #1</b>: You probably don't want to type out all numbers 1-50 right? Google your way to a shortcut for creating an array with a range of numbers.
-- <b>Hint #2</b>: You'll want to set aside a variable that stores your running tally of all the even numbers. Ask a TA for help.
+- <b>Hint #1</b>: You probably don't want to type out all numbers 1-100 right? Google your way to a shortcut for creating an array with a range of numbers.
+- <b>Hint #2</b>: You'll want to set aside a variable that stores your running tally of all the even numbers. Think about where it makes sense to store this variable. Don't be afraid to reach out to a TA for help if you need it!
 
 ---
 
@@ -299,7 +299,7 @@ hello_world('kelly');
 ```
 ---
 
-### Practice (15 minutes)
+### Practice (20 minutes)
 - Write a function called income_calculator(). It should take three arguments: $name, $hours_worked, $salary_per_hour.
 - The function should calculate money that was made in total, saved to a variable.
 - When you call the function, it should print to the screen: "[name] made [calculated total amount earned] in the [hours worked] worked."
@@ -308,13 +308,98 @@ hello_world('kelly');
 - Call the functon for Mildred, who worked for 4 hours and makes $90.32/hr.
 
 ### Challenge:
-- Account for taxes. Let's assume there's a tax of 30% for every dollar earned for those who make between $500 - $1000 per hour.
+- Account for taxes. Let's assume there's a tax of 30% on every dollar earned for those who make between $500 - $1000 per hour.
 - If the earner makes more than $1000 per hour, they will be taxed 50%
 - If the earner makes less than $500 per hour, they will be taxed 10%
 
 ---
 
+class: center, middle
+# Returning in a function
 
+---
+
+## Functions
+```php
+function feet_to_inches_converter($feet) {
+  $total_inches = $feet * 12;
+  return $total_inches; 
+  // the return keyword spits out the results
+}
+
+```
+
+---
+
+## Functions
+```php
+function feet_to_inches_converter($feet) {
+  $total_inches = $feet * 12;
+  return $total_inches; 
+  // the return keyword spits out the results
+}
+
+$inches = feet_to_inches_converter(2);
+
+```
+
+---
+
+## Functions
+```php
+function feet_to_inches_converter($feet) {
+  $total_inches = $feet * 12;
+  return $total_inches; 
+  // the return keyword spits out the results
+}
+
+$inches = feet_to_inches_converter(2);
+echo $inches;
+
+```
+---
+
+## Functions
+```php
+function feet_to_inches_converter($feet) {
+  $total_inches = $feet * 12;
+  return $total_inches; 
+  // the return keyword spits out the results
+}
+
+echo feet_to_inches_converter(2);
+```
+
+---
+
+## Functions
+```php
+function feet_to_inches_converter($feet) {
+  $total_inches = $feet * 12;
+  echo $total_inches; 
+}
+```
+
+---
+
+## Functions
+```php
+function feet_to_inches_converter($feet) {
+  $total_inches = $feet * 12;
+  return $total_inches; 
+  // the return keyword spits out the results
+}
+
+
+echo feet_to_inches_converter(2);
+
+```
+
+---
+
+
+
+---
 
 ---
 
