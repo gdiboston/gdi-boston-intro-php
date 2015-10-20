@@ -253,7 +253,7 @@ function function_name($argument1) {
 ## Function syntax w/ Args
 ```php
 function hello_world($name) {
-  $upper_case_name = strotupper($name);
+  $upper_case_name = strtoupper($name);
   echo "Hello world! I'm $all_caps_name." . PHP_EOL;
 }
 
@@ -288,7 +288,7 @@ hello_world('kelly', 'lawyer');
 ## Function syntax w/ arguments
 ```php
 function hello_world($name, $job) {
-  $all_caps_name = strotoupper($name);
+  $all_caps_name = strtoupper($name);
   echo "Hello world! I'm $all_caps_name." . PHP_EOL;
   echo "I'm a $job, but I'm learning to code!" . PHP_EOL;
 }
@@ -396,10 +396,14 @@ echo feet_to_inches_converter(2);
 ```
 
 ---
+### Practice: (15 minutes)
+- Create a new grocery_calculator() that takes in two arguments: $cost and $amount. The calculator multiplies the cost of an item with the total number. It <b>returns</b> the total cost.
+- Use your grocery calculator to detect the cost of 5 apples costing 1 dollar each. Save the result to a variable. 
+- Do the same for 4 pineapples costing 2 dollars each and 10 starfruits costing 3 dollars each.
+- Add up the total cost of all your groceries and print to the screen: "You owe a total of [total cost] dollars."
 
-
-
----
+### Finished? 
+- Congrats! There's no challenge here. The rest of the class should be spent solving programming puzzles in free form. See the rest of the slides. Remember: don't be a stranger. Take advantage of the free mentorship from your TAs!
 
 ---
 

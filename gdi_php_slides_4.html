@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GDI PHP</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+
+      h3 {
+        font-size: 16px;
+      }
+      h4 {
+        font-size: 15px;
+      }
+
+      h5 {
+        font-size: 14px;
+      }
+
+      li {
+        font-size: 28px;
+      }
+      .large_left_align {
+        text-align: left;
+        font-size: 70px;
+        font-family: 'Yanone Kaffeesatz';
+      }
+
+      .remark-slide-scaler {
+        width: 1000px;
+      }
+      .remark-slide-content {
+        font-size: 40px;
+        font-family: 'Yanone Kaffeesatz';
+        width: 100%
+      }
+
+      .remark-slide-content {
+        padding: 0% 10% 0% 10% !important;
+      }
+
+      b {
+        color: red;
+      }
+
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono';
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+---
+class: middle, center
+# Functions
+### A way to save a block of code to be executed at any time
+---
+## Function syntax
+```php
+function function_name() {
+  // code to be executed here
+}
+```
+
+---
+## Function syntax
+```php
+function function_name($argument1) {
+  // code to be executed here
+  // we now have $argument1 accessible to us
+}
+```
+---
+
+## Function syntax w/ Args
+```php
+function hello_world($name) {
+  $upper_case_name = strtoupper($name);
+  echo "Hello world! I'm $all_caps_name." . PHP_EOL;
+}
+
+```
+
+---
+
+## Function syntax w/ Args
+```php
+function hello_world($name) {
+  $upper_case_name = strtoupper($name);
+  echo "Hello world! I'm $all_caps_name." . PHP_EOL;
+}
+
+hello_world('emily');
+```
+
+---
+
+## Function syntax w/ arguments
+```php
+function hello_world($name, $job) {
+  $all_caps_name = strtoupper($name);
+  echo "Hello world! I'm $all_caps_name." . PHP_EOL;
+  echo "I'm a $job, but I'm learning to code!" . PHP_EOL;
+}
+
+hello_world('kelly', 'lawyer');
+```
+---
+
+## Function syntax w/ arguments
+```php
+function hello_world($name, $job) {
+  $all_caps_name = strtoupper($name);
+  echo "Hello world! I'm $all_caps_name." . PHP_EOL;
+  echo "I'm a $job, but I'm learning to code!" . PHP_EOL;
+}
+
+// would this work??
+hello_world('kelly');
+
+```
+---
+
+### Practice (20 minutes)
+- Write a function called income_calculator(). It should take three arguments: $name, $hours_worked, $salary_per_hour.
+- The function should calculate money that was made in total, saved to a variable.
+- When you call the function, it should print to the screen: "[name] made [calculated total amount earned] in the [hours worked] worked."
+- Call the function for Wilson, who worked for 8 hours and makes $898.80/hr.
+- Call the functon for Henrietta, who worked for 2 hours and makes $5313.32/hr.
+- Call the functon for Mildred, who worked for 4 hours and makes $90.32/hr.
+
+### Challenge:
+- Account for taxes. Let's assume there's a tax of 30% on every dollar earned for those who make between $500 - $1000 per hour.
+- If the earner makes more than $1000 per hour, they will be taxed 50%
+- If the earner makes less than $500 per hour, they will be taxed 10%
+
+---
+
+class: center, middle
+# Returning in a function
+
+---
+
+## Functions
+```php
+function feet_to_inches_converter($feet) {
+  $total_inches = $feet * 12;
+  return $total_inches; 
+  // the return keyword spits out the results
+}
+
+```
+
+---
+
+## Functions
+```php
+function feet_to_inches_converter($feet) {
+  $total_inches = $feet * 12;
+  return $total_inches; 
+  // the return keyword spits out the results
+}
+
+$inches = feet_to_inches_converter(2);
+
+```
+
+---
+
+## Functions
+```php
+function feet_to_inches_converter($feet) {
+  $total_inches = $feet * 12;
+  return $total_inches; 
+  // the return keyword spits out the results
+}
+
+$inches = feet_to_inches_converter(2);
+echo $inches;
+
+```
+---
+
+## Functions
+```php
+function feet_to_inches_converter($feet) {
+  $total_inches = $feet * 12;
+  return $total_inches; 
+  // the return keyword spits out the results
+}
+
+echo feet_to_inches_converter(2);
+```
+
+---
+
+## Functions
+```php
+function feet_to_inches_converter($feet) {
+  $total_inches = $feet * 12;
+  echo $total_inches; 
+}
+```
+
+---
+
+## Functions
+```php
+function feet_to_inches_converter($feet) {
+  $total_inches = $feet * 12;
+  return $total_inches; 
+  // the return keyword spits out the results
+}
+
+
+echo feet_to_inches_converter(2);
+
+```
+
+---
+### Practice: (15 minutes)
+- Create a new grocery_calculator() that takes in two arguments: $cost and $amount. The calculator multiplies the cost of an item with the total number. It <b>returns</b> the total cost.
+- Use your grocery calculator to detect the cost of 5 apples costing 1 dollar each. Save the result to a variable. 
+- Do the same for 4 pineapples costing 2 dollars each and 10 starfruits costing 3 dollars each.
+- Add up the total cost of all your groceries and print to the screen: "You owe a total of [total cost] dollars."
+
+### Finished? 
+- Congrats! There's no challenge here. The rest of the class should be spent solving programming puzzles in free form. See the rest of the slides. Remember: don't be a stranger. Take advantage of the free mentorship from your TAs!
+
+---
+
+    </textarea>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
