@@ -60,11 +60,53 @@
   </head>
   <body>
     <textarea id="source">
+
+
+### Attendance: http://goo.gl/forms/Czbv4oAj9K
+
 ---
+## Practice: ATM simulation (15 - 20 mins)
+
+- You will write a script to simulate a user interacting with an ATM.
+- When you run this in your terminal, you will pass in two arguments: 1) either "withdraw" or "deposit" and 2) an amount of cash.
+- In your script, set each of these inputs equal to a variable: $action and $amount
+- Set a variable, $total_amount equal to the amount sitting in your bank account, which is 1000 dollars.
+- Then, detect if the user is withdrawing or depositing money. If depositing, add the amount deposited to $total_amount and display it to the user: "You have added [amount added] dollars. You have [total] dollars in your bank account now." 
+- If withdrawing, subtract the amount withdrawn from the account and display it to the user: "You have withdrawn [amount withdrawn] dollars. You have [remainder] dollars left"
+- Finished early? Challenges on next page >>> 
+
+---
+
+#### Challenges: ATM Simulation (continued from previous page)
+- <r>Challenge #1</r>: Account for negative input, as people shouldn't be able to withdraw or deposit negatives. If they try to do so, print out an error message. <b>Hint</b>: Google how to exit your script, preventing execution of the rest of the code.
+- <r>Challenge #2</r>: Only allow the user to withdraw as much money as they have. If they try to withdraw more, give an error message.
+- <r>Challenge #3</r>: Pass in a 3rd and 4th argument via terminal. These arguments will be your pin and credit card combos. In your script, create a dictionary array: $valid_pin_and_card_combos. Put a bunch of pin and credit card combinations inside this array. (Don't use real info.) 
+```php
+$valid_pin_and_card_combos = array(
+      2312 => 22244464432, // add a bunch more
+);
+```
+Then, before you deposit or withdraw cash in your script, write a foreach loop that checks if the pin and username combination exists in your accepted array. If not, throw an error. Only continue if it exists.
+
+---
+
+class: middle, center
+# Intro to Programming PHP: Class 4
+### Attendance: http://goo.gl/forms/Czbv4oAj9K
+### Survey: https://www.surveymonkey.com/r/2YQ6588
+---
+
+# Agenda
+- Functions
+- Programming Puzzles
+
+---
+
 class: middle, center
 # Functions
 ### A named block of code that can be executed whenever we need it.
 ### Like a variable, a function needs to be defined before you use it.
+
 ---
 ## Function syntax
 ```php
