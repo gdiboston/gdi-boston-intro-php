@@ -54,7 +54,7 @@
 
       .remark-code, .remark-inline-code {
         font-family: 'Ubuntu Mono';
-        font-size: 25px;
+        font-size: 24px;
       }
     </style>
   </head>
@@ -63,12 +63,14 @@
 ---
 class: middle, center
 # Functions
-### A way to save a block of code to be executed at any time
+### A named block of code that can be executed whenever we need it.
+### Like a variable, a function needs to be defined before you use it.
 ---
 ## Function syntax
 ```php
 function function_name() {
   // code to be executed here
+  // the keyword return goes here
 }
 ```
 
@@ -84,9 +86,9 @@ function function_name($argument1) {
 
 ## Function syntax w/ Args
 ```php
-function hello_world($name) {
-  $upper_case_name = strtoupper($name);
-  echo "Hello world! I'm $all_caps_name." . PHP_EOL;
+function introduce_person($name) {
+  $all_caps_name = strtoupper($name);
+  return "I'm $all_caps_name." . PHP_EOL;
 }
 
 ```
@@ -95,147 +97,50 @@ function hello_world($name) {
 
 ## Function syntax w/ Args
 ```php
-function hello_world($name) {
-  $upper_case_name = strtoupper($name);
-  echo "Hello world! I'm $all_caps_name." . PHP_EOL;
+function introduce_person($name) {
+  $all_caps_name = strtoupper($name);
+  return "I'm $all_caps_name." . PHP_EOL;
 }
 
-hello_world('emily');
+echo hello_world('emily');
 ```
 
 ---
 
 ## Function syntax w/ arguments
 ```php
-function hello_world($name, $job) {
+function introduce_person($name, $year_birth, $year_today) {
+  $age = $year_today - $birth_year;
   $all_caps_name = strtoupper($name);
-  echo "Hello world! I'm $all_caps_name." . PHP_EOL;
-  echo "I'm a $job, but I'm learning to code!" . PHP_EOL;
+  return "I'm $all_caps_name and $age." . PHP_EOL;
 }
 
-hello_world('kelly', 'lawyer');
+echo hello_world('kelly', 1989, 2015);
 ```
 ---
 
 ## Function syntax w/ arguments
 ```php
-function hello_world($name, $job) {
+function introduce_person($name, $job) {
+  $age = $year - $birth_year;
   $all_caps_name = strtoupper($name);
-  echo "Hello world! I'm $all_caps_name." . PHP_EOL;
-  echo "I'm a $job, but I'm learning to code!" . PHP_EOL;
+  return "I'm $all_caps_name and $age years old." . PHP_EOL;
 }
 
 // would this work??
-hello_world('kelly');
-
-```
----
-
-### Practice (20 minutes)
-- Write a function called income_calculator(). It should take three arguments: $name, $hours_worked, $salary_per_hour.
-- The function should calculate money that was made in total, saved to a variable.
-- When you call the function, it should print to the screen: "[name] made [calculated total amount earned] in the [hours worked] worked."
-- Call the function for Wilson, who worked for 8 hours and makes $898.80/hr.
-- Call the functon for Henrietta, who worked for 2 hours and makes $5313.32/hr.
-- Call the functon for Mildred, who worked for 4 hours and makes $90.32/hr.
-
-### Challenge:
-- Account for taxes. Let's assume there's a tax of 30% on every dollar earned for those who make between $500 - $1000 per hour.
-- If the earner makes more than $1000 per hour, they will be taxed 50%
-- If the earner makes less than $500 per hour, they will be taxed 10%
-
----
-
-class: center, middle
-# Returning in a function
-
----
-
-## Functions
-```php
-function feet_to_inches_converter($feet) {
-  $total_inches = $feet * 12;
-  return $total_inches; 
-  // the return keyword spits out the results
-}
+echo hello_world('kelly');
 
 ```
 
 ---
 
-## Functions
-```php
-function feet_to_inches_converter($feet) {
-  $total_inches = $feet * 12;
-  return $total_inches; 
-  // the return keyword spits out the results
-}
+## Practice (20 minutes)
 
-$inches = feet_to_inches_converter(2);
+- Write a function called 'average' that takes two numbers as input and returns the average.
+- Write a function called 'list_names' that takes our phonebook array as an input and returns a list of all the names.
 
-```
-
----
-
-## Functions
-```php
-function feet_to_inches_converter($feet) {
-  $total_inches = $feet * 12;
-  return $total_inches; 
-  // the return keyword spits out the results
-}
-
-$inches = feet_to_inches_converter(2);
-echo $inches;
-
-```
----
-
-## Functions
-```php
-function feet_to_inches_converter($feet) {
-  $total_inches = $feet * 12;
-  return $total_inches; 
-  // the return keyword spits out the results
-}
-
-echo feet_to_inches_converter(2);
-```
-
----
-
-## Functions
-```php
-function feet_to_inches_converter($feet) {
-  $total_inches = $feet * 12;
-  echo $total_inches; 
-}
-```
-
----
-
-## Functions
-```php
-function feet_to_inches_converter($feet) {
-  $total_inches = $feet * 12;
-  return $total_inches; 
-  // the return keyword spits out the results
-}
-
-
-echo feet_to_inches_converter(2);
-
-```
-
----
-### Practice: (15 minutes)
-- Create a new grocery_calculator() that takes in two arguments: $cost and $amount. The calculator multiplies the cost of an item with the total number. It <b>returns</b> the total cost.
-- Use your grocery calculator to detect the cost of 5 apples costing 1 dollar each. Save the result to a variable. 
-- Do the same for 4 pineapples costing 2 dollars each and 10 starfruits costing 3 dollars each.
-- Add up the total cost of all your groceries and print to the screen: "You owe a total of [total cost] dollars."
-
-### Finished? 
-- Congrats! There's no challenge here. The rest of the class should be spent solving programming puzzles in free form. See the rest of the slides. Remember: don't be a stranger. Take advantage of the free mentorship from your TAs!
+## Challenge
+- Write a function called 'seach_by_letter' that takes two inputs: 1) our phonebook array and 2) a letter of the alphabet. The function returns another phonebook containing only friends whose name starts with that letter.
 
 ---
 
